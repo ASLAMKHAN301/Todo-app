@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <title>Todo app</title>
+</head>
+<style>
+    .checked {
+    text-decoration: line-through;
+    color: gray; /* Optional: completed task ko gray dikhane ke liye */
+    };
+    /* .low:hover{
+        color: gray;
+    } */
+</style>
+<body class="">
+    <div class="relative h-screen">
+        <!-- Top Background images -->
+        <div class="w-screen">
+            <!-- Dark-imges -->
+            <div class="dark-img hidden">
+                <img src="images/bg-desktop-dark.jpg" alt="" class="absolute -z-10 md:block hidden w-full" />
+                <img src="images/bg-mobile-dark.jpg" alt="" class="absolute -z-10 md:hidden block w-full" />
+            </div>
+            <!-- light-imges -->
+            <div class="light-img">
+                <img src="images/bg-desktop-light.jpg" alt="" class="absolute -z-10 md:block hidden w-full" />
+                <img src="images/bg-mobile-light.jpg" alt="" class="absolute -z-10 md:hidden block w-full" />
+            </div>
+        </div>
+        <!-- Todo div -->
+        <div class="pt-20 h-screen mx-auto max-w-xl p-5 font-josefin">
+            <div class="todo-div flex flex-col w-full text-very-dark-blue">
+                <!-- SVG Icons -->
+                <div class="flex justify-between text-white">
+                    <h1 class="font-bold text-3xl uppercase tracking-[0.5em]">Todo</h1>
+                    <button class="theme-toggle">
+                        <!-- Dark SVG Icon -->
+                        <img src="images/icon-moon.svg" alt="" class="theme-toggle-dark-icon w-6 h-6" />
+                        <!-- Light SVG Icon -->
+                        <img src="images/icon-sun.svg" alt="" class="theme-toggle-light-icon hidden w-6 h-6" />
+                    </button>
+                </div>
+                <!-- Input div -->
+                <div
+                    class="input-div flex items-center bg-very-light-gray rounded-lg p-4 space-x-5 mt-10">
+                    <div class="rounded-full w-5 h-5 border-2 border-dark-grayish-blue"></div>
+                    <input type="text"
+                        class="input bg-very-light-gray dark:bg-very-dark-grayish-blue outline-none w-full"
+                        placeholder="Create a new todo..." />
+                </div>
+                <!-- Output-div -->
+                <div
+                    class="output-div flex flex-col shadow-xl rounded-lg mt-5 bg-very-light-gray ">
+
+                     <div class="created-div flex flex-col rounded-lg  w-full overflow-y-auto max-h-64 ">
+                        
+                     </div>
+                                        
+                    <div class="flex justify-between p-4 text-sm text-dark-grayish-blue colors">
+                        <div>
+                            <span class="focus:text-bright-blue items-left-btn cursor-pointer high colorItem"><span class="totalItem"></span> items left</span>
+                        </div>
+                        <div class="filters space-x-5 md:block hidden">
+                            <span id="all" class="active focus:text-bright-blue cursor-pointer high colorAll">All</span>
+                            <span id="active" class="focus:text-bright-blue cursor-pointer high colorActive">Active</span>
+                            <span id="completed" class="focus:text-bright-blue cursor-pointer high colorCompleted">Completed</span>
+                        </div>
+                        
+                        <button class="clear-btn cursor-pointer high colorClearCompleted">Clear Completed</button>
+                        
+                    </div>
+                </div>
+                <div
+                    class="filters mobile-div flex text-dark-grayish-blue items-center shadow-xl justify-center rounded-lg 
+                    p-4 bg-very-light-gray space-x-5 md:hidden block mt-5 text-sm">
+                    <span id="all" class="active focus:text-bright-blue ">All</span>
+                    <span id="active" class="focus:text-bright-blue ">Active</span>
+                    <span id="completed" class="focus:text-bright-blue complet ">Completed</span>
+                </div>
+                <p class="text-lg text-center mt-10">Drag and drop to reorder list</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
